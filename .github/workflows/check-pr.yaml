@@ -1,0 +1,44 @@
+name: "Check PR"
+
+on:
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "src/**"
+  workflow_dispatch:
+
+concurrency:
+  group: "${{github.workflow}}-${{github.head_ref}}"
+  cancel-in-progress: true
+
+jobs:
+  sonarcloud:
+    name: "Sonar Cloud"  
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        # Disabling shallow clone is recommended for improving relevancy of reporting
+        fetch-depth: 0
+  tests:
+    name: "Check build"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: "Setup .NET CLI"
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.x"
+
+      - name: "Restore Solution NuGets"
+        run: dotnet restore
+
+      - name: "Build Solution"
+        run: dotnet build
+          --no-restore
+          --configuration "Release"
