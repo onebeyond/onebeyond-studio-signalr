@@ -12,15 +12,7 @@ concurrency:
   group: "${{github.workflow}}-${{github.head_ref}}"
   cancel-in-progress: true
 
-jobs:
-  sonarcloud:
-    name: "Sonar Cloud"  
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        # Disabling shallow clone is recommended for improving relevancy of reporting
-        fetch-depth: 0
+jobs:  
   tests:
     name: "Check build"
     runs-on: "ubuntu-latest"
