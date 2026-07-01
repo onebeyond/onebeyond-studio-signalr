@@ -1,15 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Title>OneBeyond.Studio.SignalR</Title>
+    <PackageId>OneBeyond.Studio.SignalR</PackageId>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Nullable>enable</Nullable>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ensure.That" Version="10.1.0" />
-    <PackageReference Include="Microsoft.Azure.SignalR" Version="1.33.1" />
-    <PackageReference Include="Microsoft.Azure.SignalR.Management" Version="1.33.1" />
+    <None Include="readme.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ensure.That"/>
+    <PackageReference Include="Microsoft.Azure.SignalR"/>
+    <PackageReference Include="Microsoft.Azure.SignalR.Management"/>
   </ItemGroup>
 
 </Project>
