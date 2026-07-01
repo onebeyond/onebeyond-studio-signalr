@@ -1,3 +1,9 @@
+<p>
+  <a href="https://one-beyond.com">
+    <img src="Logo.png" width="300" alt="One Beyond" />
+  </a>
+</p>
+
 # One Beyond Studio SignalR
 
 A quick SignalR implementation. This is designd for use with Obelisk and Azure SignalR Service.
