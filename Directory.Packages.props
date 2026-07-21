@@ -7,7 +7,7 @@
     <PackageVersion Include="Ensure.That" Version="10.1.0" />
     <PackageVersion Include="Microsoft.Azure.SignalR" Version="1.33.1" />
     <PackageVersion Include="Microsoft.Azure.SignalR.Management" Version="1.33.1" />
-    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.102" />
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.301" />
     <PackageVersion Include="MinVer" Version="7.0.0" />
   </ItemGroup>
 </Project>
